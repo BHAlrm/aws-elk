@@ -1,0 +1,9 @@
+ARG KB_VER
+# https://github.com/elastic/kibana-docker
+FROM docker.elastic.co/kibana/kibana:${KB_VER}
+
+# Remove X-Pack
+RUN kibana-plugin remove x-pack
+
+# Install other plugins with
+# RUN kibana-plugin install <name|url>
